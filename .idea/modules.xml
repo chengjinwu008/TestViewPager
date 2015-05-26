@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../IPhoneMenu/IPhoneMenu.iml" filepath="$PROJECT_DIR$/../IPhoneMenu/IPhoneMenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ImageScanner/ImageScanner.iml" filepath="$PROJECT_DIR$/../ImageScanner/ImageScanner.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestViewPager.iml" filepath="$PROJECT_DIR$/TestViewPager.iml" />
     </modules>
   </component>

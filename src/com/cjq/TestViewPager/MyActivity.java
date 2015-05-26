@@ -1,5 +1,6 @@
 package com.cjq.TestViewPager;
 
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ public class MyActivity extends FragmentActivity implements ViewPager.OnPageChan
     private View cursor;
     private List<TextView> title;
     private ViewPager pager;
-
+    private MyLinearLayout imageGridLayout;
     /**
      * Called when the activity is first created.
      */
@@ -37,6 +38,7 @@ public class MyActivity extends FragmentActivity implements ViewPager.OnPageChan
         SystemBarTintManager tintManager = new SystemBarTintManager(this);
         tintManager.setStatusBarTintEnabled(true);
         tintManager.setStatusBarTintResource(android.R.color.transparent);//通知栏所需颜色
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.image_publish);
         pager = (ViewPager) findViewById(R.id.vPager);
         fragments = new ArrayList<Fragment>();
         fragments.add(new MyFragment().setColor(Color.RED));
@@ -124,5 +126,13 @@ public class MyActivity extends FragmentActivity implements ViewPager.OnPageChan
         titleClear();
         titleChose(tag);
         pager.setCurrentItem(tag);
+    }
+
+    public MyLinearLayout getImageGridLayout() {
+        return imageGridLayout;
+    }
+
+    public void setImageGridLayout(MyLinearLayout imageGridLayout) {
+        this.imageGridLayout = imageGridLayout;
     }
 }

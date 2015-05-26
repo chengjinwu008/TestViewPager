@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 
 /**
  * Created by android on 2015/5/25.
@@ -19,6 +20,16 @@ public class MyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment,container,false);
         this.view = view;
+        MyLinearLayout layout = (MyLinearLayout) view.findViewById(R.id.image_publish);
+        ScrollView scroll = (ScrollView) view.findViewById(R.id.scroller);
+        scroll.setSmoothScrollingEnabled(true);
+        layout.setListener(new MyLinearLayout.ImageAddListener() {
+            @Override
+            public void imageAdded() {
+                scroll.smoothScrollTo(0, 9999999);
+            }
+        });
+
         return view;
     }
 
